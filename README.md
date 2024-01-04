@@ -1,8 +1,8 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/OLLHpiQA)
-- NOM : 
-- PRÉNOM :
+- NOM : Kebaili
+- PRÉNOM : Tasnim
 - URL du site :
-- URL FIGMA :
+- URL FIGMA : https://www.figma.com/file/ZCl0sw9jcQtvx1vMiho4pX/Maquettes-projet-individuel-%E2%80%94-Tasnim-KEBAILI?type=design&node-id=1601%3A115&mode=design&t=OX5lMQLWPyHISuWD-1
 
 # Structure de départ pour le projet individuel.
 
