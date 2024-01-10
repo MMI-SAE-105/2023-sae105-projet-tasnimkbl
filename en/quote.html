@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{menuIsOpen:false}" :class="menuIsOpen && 'noscroll'">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hakuna Matata">
+
+    <title>Hakuna Matata - Quote</title>
+
+    <link rel="stylesheet" href="/src/css/style.css">
+
+    <script defer src="https://unpkg.com/alpinejs"></script>
+
+</head>
+
+<body x-data="{ atTop: true }">
+
+    <header>
+
+        <div class="header__banniere">
+            <img class="img-banniere" src="/public/icones/banniere-header.svg" alt="Bannière du header">
+            <div class="header__buttons">
+                <a href="/fr/replique.html" class="lang__button">FR</a>
+                <button class="menu-btn" aria-label="menu" aria-expanded="false" aria-controls="mainNav"
+                @pointerdown="menuIsOpen = !menuIsOpen" :class="menuIsOpen && 'menu-btn--open'">
+                <span class="menu-btn__bar"></span>
+                </button>
+            </div>
+            <h1 class="header__title">Hakuna<br>Matata</h1>
+        </div>
+
+        <nav class="header__menu menu" id="mainNav" :class="menuIsOpen && 'menu--open'">
+            <ul class="menu__list list-unstyled">
+                <li class="menu__item"><a class="menu__link" href="/en/index.html">Home</a></li>
+                <li class="menu__item"><a class="menu__link" href="/en/quote.html">Quote</a></li>
+                <li class="menu__item"><a class="menu__link" href="/en/movie.html">The Lion King</a></li>
+                <li class="menu__item"><a class="menu__link" href="/en/director.html">Jon Favreau</a></li>
+                <li class="menu__item"><a class="menu__link" href="/en/book.html">Happy philosophers</a></li>
+                <li class="menu__item"><a class="menu__link" href="/en/music.html">Hakuna Matata</a></li>
+            </ul>
+        </nav>
+            
+    </header>
+
+<main>
+        <header class="top">
+            <h2 class="top__title">Quand le monde entier te persécute, tu te dois de persécuter le monde : Le pouvoir de la réplique emblématique du "Roi Lion"</h2>
+            <p class="top__introduction">Dans l'univers cinématographique, certaines répliques transcendent le temps et deviennent des icônes. "Quand le monde entier te persécute, tu te dois de persécuter le monde" est l'une de ces citations mémorables. Cette phrase est extraite du film d'animation bien-aimé de Disney, "Le Roi Lion". Elle est prononcée par le personnage de Timon, un suricate farfelu qui joue un rôle essentiel dans l'histoire de Simba, le jeune lion destiné à devenir roi. Cette citation incarne une philosophie de vie qui, bien que dérivée d'une comédie musicale pour enfants, porte un message profond et universel.</p>
+            <img class="top__img" src="/public/img/REP1 .webp" alt="Timon">
+        </header>
+
+        <section class="article">
+ 
+            <div>
+                <figure class="article__figure">
+                <img src="/public/img/REP2.webp" alt="Photo Timon et Pumba" class="article__image">
+                <figcaption class="article__description">Timon et Pumba avant de rencontrer Simba</figcaption>
+                </figure>
+                <p class="article__text">La philosophie de "Le Roi Lion" s'articule autour de l'expression swahilie "Hakuna Matata", qui se traduit littéralement par "pas de problème" ou "pas de soucis". Par extension, cette formule invite à adopter une attitude insouciante et épicurienne face aux difficultés de la vie. Elle suggère que les soucis et les problèmes sont des fardeaux inutiles et que la véritable sagesse réside dans la capacité à vivre le moment présent, à embrasser la joie et à faire confiance à son propre destin.</p>
+            </div>
+
+            <div>
+                <figure class="article__figure">
+                <img src="/public/img/REP3.webp" alt="Photo Timon, Pumba et Simba" class="article__image">
+                <figcaption class="article__description">Timon, Pumba et Simba qui s'endorment</figcaption>
+                </figure>
+                <p class="article__text">La citation de Timon, bien que moins connue que "Hakuna Matata", partage l'esprit de cette philosophie. Elle nous rappelle que lorsque le monde semble s'acharner contre nous, nous avons le pouvoir de résister, de lutter et de surmonter les obstacles. C'est un appel à lutter pour ce que nous croyons, à persévérer dans l'adversité et à ne pas laisser les circonstances nous abattre.</p>
+            </div>
+
+            <div>
+                <figure class="article__figure">
+                <img src="/public/img/REP4.webp" alt="Photo rencontre Timon, Pumba et Simba" class="article__image">
+                <figcaption class="article__description"> Rencontre Timon, Pumba et Simba</figcaption>
+                </figure>
+                <p class="article__text">Le personnage de Timon lui-même incarne cette philosophie de manière comique. Il est le maître de la dérision et de la légèreté, prônant une vie insouciante au sein de la jungle africaine. Lorsqu'il prononce cette célèbre réplique, il le fait avec une pointe d'ironie, mais le message sous-jacent est clair : nous avons le pouvoir de prendre en main notre propre destin, même lorsque tout semble contre nous.</p>
+            </div>
+
+            <div>
+                <figure class="article__figure">
+                <img src="/public/img/REP5.webp" alt="Photo de Rafiki " class="article__image">
+                <figcaption class="article__description">Rafiki le sage</figcaption>
+                </figure>
+                <p class="article__text">"Quand le monde entier te persécute, tu te dois de persécuter le monde" est une leçon de résilience, de détermination et d'optimisme. Elle nous rappelle que, face à l'adversité, nous pouvons choisir de devenir les maîtres de notre propre destin. Cette citation du "Roi Lion transcende l'écran pour devenir une source d'inspiration dans la vie réelle. Elle nous encourage à persévérer, à surmonter les défis et à poursuivre nos rêves, même lorsque le monde semble être contre nous.</p>
+            </div>
+
+            <div>
+                <figure class="article__figure">
+                <img src="/public/img/REP6.webp" alt="Photo la belle vie " class="article__image">
+                <figcaption class="article__description">Timon, Pumba et Simba vivant heureux</figcaption>
+                </figure>
+                <p class="article__text">En conclusion, cette réplique emblématique de "Le Roi Lion" incarne une philosophie de vie puissante et intemporelle. Elle nous rappelle l'importance de l'insouciance, de la persévérance et de la confiance en notre propre capacité à façonner notre destin. C'est un rappel que, même lorsque le monde entier semble se liguer contre nous, nous avons le pouvoir de persécuter le monde à notre manière, en créant notre propre chemin vers le bonheur et la réussite.</p>
+            </div>
+
+            <div class="article__button-box">
+                <a href="/fr/film.html" class="article__button">Lire l'article suivant</a>
+            </div>
+        </section>
+
+</main>
+
+<footer class="footer">
+
+    <nav class="footer__menu">
+        <ul class="list-unstyled">
+            <li><a href="/fr/contact.html">Contact</a></li>
+            <li><a href="/fr/a-propos.html">About</a></li>
+            <li><a href="/fr/glossaire.html">Glossary</a></li>
+            <li><a href="/fr/autres-projets.html">Other projects</a></li>
+        </ul>
+    </nav>
+
+    <img src="/public/icones/logo-mmi.svg" alt="Logo MMi" class="footer__logo">
+
+    <div class="footer__contact">
+        <p class="footer__contact">To contact me : <b><a href="mailto:tasnim.kebaili@edu.univ-fcomte.fr" class="footer__link">tasnim.kebaili@edu.univ-fcomte.fr</a></b></p>
+        <p class="footer__contact">Project carried out as part of an educational exercise at the <b><a href="https://mmimontbeliard.com/" class="footer__link">MMi department of Montbéliard</a></b>.</p>
+    </div>
+</footer>
+
+</body>
+</html>

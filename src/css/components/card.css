@@ -1,0 +1,41 @@
+.introduction__title {
+    text-align: center;
+    }
+
+.article__card.card {
+    padding-bottom: 80px;
+  }
+
+.card__caption {
+    position: relative;
+    margin: 0 auto;
+    margin-top: -130px;
+    max-width: calc(100% - 90px);
+    display: flex;
+    flex-direction: column;
+  }
+  
+.card__image {
+  margin-bottom: 5px;
+    height: 100%;
+    object-fit: cover;
+    align-items: center;
+  }
+
+.card__title {
+    padding-top: 35px;
+    text-align: center;
+  }
+  
+.card__description {
+    margin-left: -30px;
+    color: #4A4A4A;
+  }
+
+.card__link {
+    text-decoration: none;
+    align-self: flex-end;
+    background-color: #E5AD3F;
+    border: 1px solid black;
+    padding: 2px 3px;
+  }

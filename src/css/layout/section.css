@@ -1,0 +1,62 @@
+.section {
+    position: relative;
+  }
+
+.article__title {
+    margin: 15px;
+  }
+  
+.article__text {
+    margin: 15px;
+    padding-bottom: 15px;
+  }
+  
+.article__description {
+    margin-top: -8px;
+    text-align: center;
+  }
+  
+.article__link {
+    padding-top: 20px;
+    margin: 15px;
+    text-decoration: none;
+    text-decoration: underline;
+  }
+
+  .galerie__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.galerie img{
+    align-items: center;
+}
+
+.galerie__title {
+    border : 1px solid #E5AD3F;
+    padding : 3px 3px;
+    text-align: center;
+    margin : 30px;
+  }
+
+.galerie__subtitle {
+    margin : 15px;
+    align-self: flex-start;
+  }
+
+.galerie__text {
+    margin : 15px;
+    margin-bottom: 30px;
+  }
+
+.galerie__img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.galerie__btn  {
+    position: absolute;
+
+}

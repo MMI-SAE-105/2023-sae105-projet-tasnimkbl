@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" x-data="{menuIsOpen:false}" :class="menuIsOpen && 'noscroll'">
 
 <head>
     <meta charset="UTF-8">
@@ -7,20 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Hakuna Matata">
 
-    <title>Hakuna Matata - Page d'accueil</title>
+    <title>Hakuna Matata - Réalisateur</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/src/css/style.css">
 
-    <script defer="" src="https://unpkg.com/alpinejs@3.4.2/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs"></script>
 
 </head>
 
-<body>
+<body x-data="{ atTop: true }">
+
     <header>
 
-        <div class="header__banniere"><img src="/public/icones/banniere-header.svg" alt="Bannière du header"></div>
+        <div class="header__banniere">
+            <img class="img-banniere" src="/public/icones/banniere-header.svg" alt="Bannière du header">
+            <div class="header__buttons">
+                <a href="/en/director.html" class="lang__button">EN</a>
+                <button class="menu-btn" aria-label="menu" aria-expanded="false" aria-controls="mainNav"
+                @pointerdown="menuIsOpen = !menuIsOpen" :class="menuIsOpen && 'menu-btn--open'">
+                <span class="menu-btn__bar"></span>
+                </button>
+            </div>
+            <h1 class="header__title">Hakuna<br>Matata</h1>
+        </div>
 
-        <nav class="header__menu menu">
+        <nav class="header__menu menu" id="mainNav" :class="menuIsOpen && 'menu--open'">
             <ul class="menu__list list-unstyled">
                 <li class="menu__item"><a class="menu__link" href="/fr/index.html">Accueil</a></li>
                 <li class="menu__item"><a class="menu__link" href="/fr/replique.html">Réplique</a></li>
@@ -31,14 +42,12 @@
             </ul>
         </nav>
 
-        <h1 class="header__title">Hakuna Matata</h1>
-
     </header>
 
 <main>
 
-    <header class="top">
-        <div class="top__img"><img src="/public/img/REA1.webp" alt="Jon Favreau"></div>
+    <header class="top2">
+        <div class="top2__img"><img src="/public/img/REA1.webp" alt="Jon Favreau"></div>
     </header>
 
     <section class="article">
@@ -82,7 +91,9 @@
             <p class="article__text">En conclusion, Jon Favreau est bien plus qu'un réalisateur de talent. C'est un artiste polyvalent qui a su laisser sa marque sur l'industrie du cinéma avec des films mémorables. Sa réinvention de "Le Roi Lion" est un témoignage de son génie créatif et de sa passion pour le cinéma.</p>
         </div>
 
-        <a href="/fr/livre.html" class="article__button">Lire l'article suivant</a>
+        <div class="article__button-box">
+            <a href="/fr/livre.html" class="article__button">Lire l'article suivant</a>
+        </div>
 
     </section>
 

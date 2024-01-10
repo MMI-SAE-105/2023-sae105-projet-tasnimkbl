@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" x-data="{menuIsOpen:false}" :class="menuIsOpen && 'noscroll'">
 
 <head>
     <meta charset="UTF-8">
@@ -7,20 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Hakuna Matata">
 
-    <title>Hakuna Matata - Page d'accueil</title>
+    <title>Hakuna Matata - Musique</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/src/css/style.css">
 
-    <script defer="" src="https://unpkg.com/alpinejs@3.4.2/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs"></script>
 
 </head>
 
-<body>
+<body x-data="{ atTop: true }">
+
     <header>
 
-        <div class="header__banniere"><img src="/public/icones/banniere-header.svg" alt="Bannière du header"></div>
+        <div class="header__banniere">
+            <img class="img-banniere" src="/public/icones/banniere-header.svg" alt="Bannière du header">
+            <div class="header__buttons">
+                <a href="/en/music.html" class="lang__button">EN</a>
+                <button class="menu-btn" aria-label="menu" aria-expanded="false" aria-controls="mainNav"
+                @pointerdown="menuIsOpen = !menuIsOpen" :class="menuIsOpen && 'menu-btn--open'">
+                <span class="menu-btn__bar"></span>
+                </button>
+            </div>
+            <h1 class="header__title">Hakuna<br>Matata</h1>
+        </div>
 
-        <nav class="header__menu menu">
+        <nav class="header__menu menu" id="mainNav" :class="menuIsOpen && 'menu--open'">
             <ul class="menu__list list-unstyled">
                 <li class="menu__item"><a class="menu__link" href="/fr/index.html">Accueil</a></li>
                 <li class="menu__item"><a class="menu__link" href="/fr/replique.html">Réplique</a></li>
@@ -31,14 +42,12 @@
             </ul>
         </nav>
 
-        <h1 class="header__title">Hakuna Matata</h1>
-
     </header>
 
     <main>
 
-        <header class="top">
-            <div class="top__img"><img src="/public/img/MUSIC1.webp" alt="Couverture livre"></div>
+        <header class="top2">
+            <div class="top2__img"><img src="/public/img/MUSIC1.webp" alt="Couverture livre"></div>
         </header>
 
         <section class="article">
@@ -98,22 +107,22 @@
 
         <section class="liens__musique">
 
-            <div>
+            <div class="article__button-box">
                 <a href="https://www.youtube.com/watch?v=v34w65U98gI&pp=ygUTaGFrdW5hIG1hdGF0YSBmaWxtIA%3D%3D">
                     <img src="../public/icones/youtube fr.svg" alt="ecoutez sur youtube"></a>
             </div>
 
-            <div>
+            <div class="article__button-box">
                 <a href="https://deezer.page.link/EBU7Rn9QcvhUKSCs7">
                     <img src="../public/icones/deezer fr.svg" alt="ecoutez sur deezer"></a>
             </div>
 
-            <div>
+            <div class="article__button-box">
                 <a href="https://music.apple.com/fr/album/hakuna-matata/712975892?i=712976290">
                     <img src="../public/icones/apple music fr.svg" alt="ecoutez sur apple music"></a>
             </div>
 
-            <div>
+            <div class="article__button-box">
                 <a href="https://open.spotify.com/track/3xAfJdO9px9oh1HL7WTh0h?si=5c1e4a74aa474388">
                     <img src="../public/icones/spotify fr.svg" alt="ecoutez sur spotify"></a>
             </div>

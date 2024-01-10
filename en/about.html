@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{menuIsOpen:false}" :class="menuIsOpen && 'noscroll'">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hakuna Matata">
+
+    <title>Hakuna Matata - About</title>
+
+    <link rel="stylesheet" href="/src/css/style.css">
+    
+    <script defer src="https://unpkg.com/alpinejs"></script>
+
+</head>
+
+<body x-data="{ atTop: true }">
+    <header>
+
+        <div class="header__banniere">
+            <img class="img-banniere" src="/public/icones/banniere-header.svg" alt="Bannière du header">
+            <div class="header__buttons">
+                <a href="/fr/a-propos.html" class="lang__button">FR</a>
+                <button class="menu-btn" aria-label="menu" aria-expanded="false" aria-controls="mainNav"
+                @pointerdown="menuIsOpen = !menuIsOpen" :class="menuIsOpen && 'menu-btn--open'">
+                <span class="menu-btn__bar"></span>
+                </button>
+            </div>
+            <h1 class="header__title">Hakuna<br>Matata</h1>
+        </div>
+
+        <nav class="header__menu menu" id="mainNav" :class="menuIsOpen && 'menu--open'">
+            <ul class="menu__list list-unstyled">
+                <li class="menu__item"><a class="menu__link" href="/en/index.html">Home</a></li>
+                <li class="menu__item"><a class="menu__link" href="/en/quote.html">Quote</a></li>
+                <li class="menu__item"><a class="menu__link" href="/en/movie.html">The Lion King</a></li>
+                <li class="menu__item"><a class="menu__link" href="/en/director.html">Jon Favreau</a></li>
+                <li class="menu__item"><a class="menu__link" href="/en/book.html">Happy philosophers</a></li>
+                <li class="menu__item"><a class="menu__link" href="/en/music.html">Hakuna Matata</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <div>
+            <h2 class="top__title">Informations à propos du créateur</h2>
+        </div>
+
+        <div>
+            <p class="informations__text">Tasnim KEBAILI MMI 1 B2</p>
+            <p class="informations__text">Je me nomme Tasnim Kebaili. Je suis étudiant en première année du BUT MMI à l’IUT Belfort-Montbéliard.</p>
+            <p class="informations__text">J’ai réalisé ce site dans le cadra d’un projet individuel scolaire.</p>
+            <p class="informations__text">Le site a été designé et développé avec mes connaissances</p>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+
+        <nav class="footer__menu">
+            <ul class="list-unstyled">
+                <li><a href="/fr/contact.html">Contact</a></li>
+                <li><a href="/fr/a-propos.html">About</a></li>
+                <li><a href="/fr/glossaire.html">Glossary</a></li>
+                <li><a href="/fr/autres-projets.html">Other projects</a></li>
+            </ul>
+        </nav>
+
+        <img src="/public/icones/logo-mmi.svg" alt="Logo MMi" class="footer__logo">
+
+        <div class="footer__contact">
+            <p class="footer__contact">To contact me : <b><a href="mailto:tasnim.kebaili@edu.univ-fcomte.fr" class="footer__link">tasnim.kebaili@edu.univ-fcomte.fr</a></b></p>
+            <p class="footer__contact">Project carried out as part of an educational exercise at the <b><a href="https://mmimontbeliard.com/" class="footer__link">MMi department of Montbéliard</a></b>.</p>
+        </div>
+    </footer>
+    
+</body>
+    
+</html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" x-data="{menuIsOpen:false}" :class="menuIsOpen && 'noscroll'">
 
 <head>
     <meta charset="UTF-8">
@@ -7,21 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Hakuna Matata">
 
-    <title>Hakuna Matata - Réplique</title>
+    <title>Hakuna Matata - Film</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/src/css/style.css">
 
-    <script defer="" src="https://unpkg.com/alpinejs@3.4.2/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs"></script>
 
 </head>
 
-<body>
+<body x-data="{ atTop: true }">
 
-        <header>
+    <header>
 
-        <div class="header__banniere"><img src="/public/icones/banniere-header.svg" alt="Bannière du header"></div>
+        <div class="header__banniere">
+            <img class="img-banniere" src="/public/icones/banniere-header.svg" alt="Bannière du header">
+            <div class="header__buttons">
+                <a href="/en/movie.html" class="lang__button">EN</a>
+                <button class="menu-btn" aria-label="menu" aria-expanded="false" aria-controls="mainNav"
+                @pointerdown="menuIsOpen = !menuIsOpen" :class="menuIsOpen && 'menu-btn--open'">
+                <span class="menu-btn__bar"></span>
+                </button>
+            </div>
+            <h1 class="header__title">Hakuna<br>Matata</h1>
+        </div>
 
-        <nav class="header__menu menu">
+        <nav class="header__menu menu" id="mainNav" :class="menuIsOpen && 'menu--open'">
             <ul class="menu__list list-unstyled">
                 <li class="menu__item"><a class="menu__link" href="/fr/index.html">Accueil</a></li>
                 <li class="menu__item"><a class="menu__link" href="/fr/replique.html">Réplique</a></li>
@@ -32,19 +42,17 @@
             </ul>
         </nav>
 
-        <h1 class="header__title">Hakuna Matata</h1>
-
         </header>
 
 <main>
-        <header class="top">
-            <div class="top__img"><img src="/public/img/FILM1.webp" alt="Affiche film"></div>
+        <header class="top2">
+            <div class="top2__img"><img src="/public/img/FILM1.webp" alt="Affiche film"></div>
         </header>
 
         <section class="article">
 
             <div>
-                <h3 class="article__title">Le roi lion” (2019) : Un chef-d’œuvre d'animation Réinventé</h3>
+                <h3 class="article__title">"Le Roi Lion” (2019) : Un chef-d’œuvre d'animation Réinventé</h3>
                 <p class="article__text">En 2019, Disney nous a offert une nouvelle adaptation de son classique animé bien-aimé, “Le Roi Lion”. Cette version en prises de vues réelles, réalisée par Jon Favreau, a su captiver le public avec sa beauté visuelle et son respect fidèle envers l'original de 1994. Revisitons ce chef-d'œuvre d'animation réinventé.</p>
             </div>
 
@@ -98,34 +106,42 @@
         
             <h2 class="galerie__title">Découvrez d’autres réinventions de classiques animés</h2>
         
-            <div>
-                <img src="../public/img/FILM2.webp" alt="Aladdin">
-                <a href="https://www.youtube.com/watch?v=foyufD52aog">
-                    <img src="../public/icones/player.svg" alt="play"></a>
+            <div class="galerie__card">
+                <div class="galerie__img-container">
+                    <img src="../public/img/FILM2.webp" alt="Aladdin">
+                    <a class="galerie__btn" href="https://www.youtube.com/watch?v=foyufD52aog">
+                        <img src="../public/icones/player.svg" alt="play"></a>
+                </div>
                 <h3 class="galerie__subtitle">"Aladdin" (2019)</h3>
                 <p class="galerie__text">Encore une autre adaptation en prises de vues réelles d'un classique de Disney réalisée par Guy Ritchie. Comme "Le Roi Lion", ce film combine des éléments d'animation et de prises de vues réelles pour raconter l'histoire d'Aladdin et de son génie</p>
             </div>
         
-            <div>
-                <img src="../public/img/FILM3.webp" alt="Le livre de la jungle">
-                <a href="https://www.youtube.com/watch?v=nahgbLygyRU">
-                    <img src="../public/icones/player.svg" alt="play"></a>
+            <div class="galerie__card">
+                <div class="galerie__img-container">
+                    <img src="../public/img/FILM3.webp" alt="Le livre de la jungle">
+                    <a class="galerie__btn" href="https://www.youtube.com/watch?v=nahgbLygyRU">
+                        <img src="../public/icones/player.svg" alt="play"></a>
+                </div>
                 <h3 class="galerie__subtitle">"Le Livre de la Jungle" (2016)</h3>
                 <p class="galerie__text">Réalisé par Jon Favreau, le même réalisateur derrière la version en prises de vues réelles du "Roi Lion", ce film réinvente une autre œuvre classique de Disney. Il utilise des techniques de capture de mouvement pour donner vie à des animaux parlants et crée un environnement visuel impressionnant.</p>
             </div>
         
-            <div>
-                <img src="../public/img/FILM4.webp" alt="Dumbo">
-                <a href="https://www.youtube.com/watch?v=lhwAcdj3HKg">
-                    <img src="../public/icones/player.svg" alt="play"></a>
+            <div class="galerie__card">
+                <div class="galerie__img-container">
+                    <img src="../public/img/FILM4.webp" alt="Dumbo">
+                    <a class="galerie__btn" href="https://www.youtube.com/watch?v=lhwAcdj3HKg">
+                        <img src="../public/icones/player.svg" alt="play"></a>
+                </div>
                 <h3 class="galerie__subtitle">"Dumbo" (2019)</h3>
                 <p class="galerie__text">Réalisé par Tim Burton, ce film est une réinvention du classique Disney "Dumbo". Tout comme "Le Roi Lion", il explore la magie de l'animation et de la réalité virtuelle pour créer un éléphant volant réaliste.</p>
             </div>
         
-            <div>
-                <img src="../public/img/FILM5.webp" alt="La Belle et la Bête">
-                <a href="https://www.youtube.com/watch?v=U19PzS6c3os">
-                    <img src="../public/icones/player.svg" alt="play"></a>
+            <div class="galerie__card">
+                <div class="galerie__img-container">
+                    <img src="../public/img/FILM5.webp" alt="La Belle et la Bête">
+                    <a class="galerie__btn" href="https://www.youtube.com/watch?v=U19PzS6c3os">
+                        <img src="../public/icones/player.svg" alt="play"></a>
+                </div>
                 <h3 class="galerie__subtitle">"La Belle et la Bête" (2017)</h3>
                 <p class="galerie__text">Une autre adaptation en prises de vues réelles d'un classique Disney, réalisée par Bill Condon. Le film combine des éléments d'animation et de prises de vues réelles pour donnervie aux personnages bien-aimés de "La Belle et la Bête".</p>
             </div>
@@ -139,7 +155,9 @@
 
         </section>
 
-        <a href="/fr/realisateur.html" class="article__button">Lire l'article suivant</a>
+        <div class="article__button-box">
+            <a href="/fr/realisateur.html" class="article__button">Lire l'article suivant</a>
+        </div>
 
 </main>
 

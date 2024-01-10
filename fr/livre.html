@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" x-data="{menuIsOpen:false}" :class="menuIsOpen && 'noscroll'">
 
 <head>
     <meta charset="UTF-8">
@@ -7,20 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Hakuna Matata">
 
-    <title>Hakuna Matata - Page d'accueil</title>
+    <title>Hakuna Matata - Livre</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/src/css/style.css">
 
-    <script defer="" src="https://unpkg.com/alpinejs@3.4.2/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs"></script>
 
 </head>
 
-<body>
-        <header>
+<body x-data="{ atTop: true }">
 
-            <div class="header__banniere"><img src="/public/icones/banniere-header.svg" alt="Bannière du header"></div>
+    <header>
 
-            <nav class="header__menu menu">
+        <div class="header__banniere">
+            <img class="img-banniere" src="/public/icones/banniere-header.svg" alt="Bannière du header">
+            <div class="header__buttons">
+                <a href="/en/book.html" class="lang__button">EN</a>
+                <button class="menu-btn" aria-label="menu" aria-expanded="false" aria-controls="mainNav"
+                @pointerdown="menuIsOpen = !menuIsOpen" :class="menuIsOpen && 'menu-btn--open'">
+                <span class="menu-btn__bar"></span>
+                </button>
+            </div>
+            <h1 class="header__title">Hakuna<br>Matata</h1>
+        </div>
+
+            <nav class="header__menu menu" id="mainNav" :class="menuIsOpen && 'menu--open'">
                 <ul class="menu__list list-unstyled">
                     <li class="menu__item"><a class="menu__link" href="/fr/index.html">Accueil</a></li>
                     <li class="menu__item"><a class="menu__link" href="/fr/replique.html">Réplique</a></li>
@@ -31,14 +42,12 @@
                 </ul>
             </nav>
 
-            <h1 class="header__title">Hakuna Matata</h1>
-
         </header>
 
 <main>
  
-    <header class="top">
-        <div class="top__img"><img src="/public/img/BOOK1.webp" alt="Couverture livre"></div>
+    <header class="top2">
+        <div class="top2__img"><img src="/public/img/BOOK1.webp" alt="Couverture livre"></div>
     </header>
     
     <section class="article">
@@ -86,37 +95,27 @@
 
     <section class="frise">
         
-        <div>
-            <img src="/public/icones/frise.svg" alt="frise">   
-        </div>
-
-        <div>
-            <img src="/public/img/BOOK2.webp" alt="couverture Le monde de Sophie">   
-        </div>
-
-        <div>
-            <p class="frise__text">Ce roman philosophique pour les jeunes lecteurs explore les concepts philosophiques à travers une histoire captivante. Il offre une introduction ludique à la philosophie et peut compléter la démarche de Marianne Chaillan en utilisant la fiction pour explorer des idées philosophiques.</p>
-        </div>
-
-        <div>
-            <img src="/public/img/BOOK3.webp" alt="couverture Le mythe de Sisyphe">
-        </div>
-
-        <div>
+        <div class="frise__left">
+            <img src="/public/img/BOOK2.webp" alt="couverture Le monde de Sophie">
             <p class="frise__text">Un classique de la philosophie existentialiste, ce livre de Camus aborde des questions existentielles profondes, notamment le sens de la vie, la révolte et la recherche du bonheur. Il peut être un complément intéressant à la réflexion sur la philosophie de la vie abordée dans le livre de Chaillan.</p>
-        </div>
-
-        <div>
             <img src="/public/img/BOOK4.webp" alt="L'art d'avoir toujours raison">
         </div>
-        
-        <div>
+
+        <div class="frise__middle">
+            <img class="frise__arrow" src="/public/icones/frise.svg" alt="frise">   
+        </div>
+
+        <div class="frise__right">
+            <p class="frise__text">Ce roman philosophique pour les jeunes lecteurs explore les concepts philosophiques à travers une histoire captivante. Il offre une introduction ludique à la philosophie et peut compléter la démarche de Marianne Chaillan en utilisant la fiction pour explorer des idées philosophiques.</p>
+            <img src="/public/img/BOOK3.webp" alt="couverture Le mythe de Sisyphe">
             <p class="frise__text">Ce livre expose les stratégies et les ruses que l'on peut utiliser pour gagner un argument, mais il soulève également des questions plus profondes sur la persuasion, la rhétorique et la philosophie de la discussion. Il peut compléter la réflexion sur la philosophie de la persuasion et de la communication explorée dans "Ils vécurent philosophes et firent beaucoup d'heureux".</p>
         </div>
         
     </section>
 
+    <div class="article__button-box">
         <a href="/fr/musique.html" class="article__button">Lire l'article suivant</a>
+    </div>
 
 </main>
 

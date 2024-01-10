@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" x-data="{menuIsOpen:false}" :class="menuIsOpen && 'noscroll'">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,18 +9,28 @@
 
     <title>Hakuna Matata - Page d'accueil</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/src/css/style.css">
 
-    <script defer="" src="https://unpkg.com/alpinejs@3.4.2/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs"></script>
 
 </head>
 
-<body>
-        <header>
+<body x-data="{ atTop: true }">
+    <header>
 
-            <div class="header__banniere"><img src="/public/icones/banniere-header.svg" alt="Bannière du header"></div>
-
-            <nav class="header__menu menu">
+            <div class="header__banniere">
+                <img class="img-banniere" src="/public/icones/banniere-header.svg" alt="Bannière du header">
+                <div class="header__buttons">
+                    <a href="/en/index.html" class="lang__button">EN</a>
+                    <button class="menu-btn" aria-label="menu" aria-expanded="false" aria-controls="mainNav"
+                    @pointerdown="menuIsOpen = !menuIsOpen" :class="menuIsOpen && 'menu-btn--open'">
+                    <span class="menu-btn__bar"></span>
+                    </button>
+                </div>
+                <h1 class="header__title">Hakuna<br>Matata</h1>
+            </div>
+           
+            <nav class="header__menu menu" id="mainNav" :class="menuIsOpen && 'menu--open'">
                 <ul class="menu__list list-unstyled">
                     <li class="menu__item"><a class="menu__link" href="/fr/index.html">Accueil</a></li>
                     <li class="menu__item"><a class="menu__link" href="/fr/replique.html">Réplique</a></li>
@@ -30,7 +41,6 @@
                 </ul>
             </nav>
 
-            <h1 class="header__title">Hakuna Matata</h1>
                 
         </header>
 

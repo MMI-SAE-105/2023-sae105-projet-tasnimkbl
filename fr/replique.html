@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" x-data="{menuIsOpen:false}" :class="menuIsOpen && 'noscroll'">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,19 +9,29 @@
 
     <title>Hakuna Matata - Réplique</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/src/css/style.css">
 
-    <script defer="" src="https://unpkg.com/alpinejs@3.4.2/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs"></script>
 
 </head>
 
-<body>
+<body x-data="{ atTop: true }">
 
     <header>
 
-        <div class="header__banniere"><img src="/public/icones/banniere-header.svg" alt="Bannière du header"></div>
+        <div class="header__banniere">
+            <img class="img-banniere" src="/public/icones/banniere-header.svg" alt="Bannière du header">
+            <div class="header__buttons">
+                <a href="/en/quote.html" class="lang__button">EN</a>
+                <button class="menu-btn" aria-label="menu" aria-expanded="false" aria-controls="mainNav"
+                @pointerdown="menuIsOpen = !menuIsOpen" :class="menuIsOpen && 'menu-btn--open'">
+                <span class="menu-btn__bar"></span>
+                </button>
+            </div>
+            <h1 class="header__title">Hakuna<br>Matata</h1>
+        </div>
 
-        <nav class="header__menu menu">
+        <nav class="header__menu menu" id="mainNav" :class="menuIsOpen && 'menu--open'">
             <ul class="menu__list list-unstyled">
                 <li class="menu__item"><a class="menu__link" href="/fr/index.html">Accueil</a></li>
                 <li class="menu__item"><a class="menu__link" href="/fr/replique.html">Réplique</a></li>
@@ -30,16 +41,14 @@
                 <li class="menu__item"><a class="menu__link" href="/fr/musique.html">Hakuna Matata</a></li>
             </ul>
         </nav>
-
-        <h1 class="header__title">Hakuna Matata</h1>
             
     </header>
 
 <main>
         <header class="top">
-            <h2 class="top__title">Quand le monde entier te persécute, tu te dois de persécuter le monde : Le pouvoir de la réplique emblématique de "Le Roi Lion"</h2>
+            <h2 class="top__title">Quand le monde entier te persécute, tu te dois de persécuter le monde : Le pouvoir de la réplique emblématique du "Roi Lion"</h2>
             <p class="top__introduction">Dans l'univers cinématographique, certaines répliques transcendent le temps et deviennent des icônes. "Quand le monde entier te persécute, tu te dois de persécuter le monde" est l'une de ces citations mémorables. Cette phrase est extraite du film d'animation bien-aimé de Disney, "Le Roi Lion". Elle est prononcée par le personnage de Timon, un suricate farfelu qui joue un rôle essentiel dans l'histoire de Simba, le jeune lion destiné à devenir roi. Cette citation incarne une philosophie de vie qui, bien que dérivée d'une comédie musicale pour enfants, porte un message profond et universel.</p>
-            <div class="top__img"><img src="/public/img/REP1 .webp" alt="Timon"></div>
+            <img class="top__img" src="/public/img/REP1 .webp" alt="Timon">
         </header>
 
         <section class="article">
@@ -84,8 +93,9 @@
                 <p class="article__text">En conclusion, cette réplique emblématique de "Le Roi Lion" incarne une philosophie de vie puissante et intemporelle. Elle nous rappelle l'importance de l'insouciance, de la persévérance et de la confiance en notre propre capacité à façonner notre destin. C'est un rappel que, même lorsque le monde entier semble se liguer contre nous, nous avons le pouvoir de persécuter le monde à notre manière, en créant notre propre chemin vers le bonheur et la réussite.</p>
             </div>
 
-            <a href="/fr/film.html" class="article__button">Lire l'article suivant</a>
-            
+            <div class="article__button-box">
+                <a href="/fr/film.html" class="article__button">Lire l'article suivant</a>
+            </div>
         </section>
 
 </main>

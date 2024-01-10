@@ -1,0 +1,14 @@
+.article__button {
+    align-items: center;
+    text-decoration: none;
+    background-color: #E5AD3F;
+    border: 1px solid black;
+    padding: 3px 4px;
+    align-self: center;
+  }
+
+.article__button-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
